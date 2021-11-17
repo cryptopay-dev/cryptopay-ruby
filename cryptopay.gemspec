@@ -6,7 +6,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'cryptopay/version'
 
 Gem::Specification.new do |s|
-  s.name = 'cryptopay'
+  s.name = 'cryptopay-ruby'
   s.version = Cryptopay::VERSION
   s.authors = 'Cryptopay'
   s.email = 'support@cryptopay.me'
@@ -32,6 +32,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency('dotenv')
   s.add_development_dependency('pry-byebug')
+  s.add_development_dependency('rake')
   s.add_development_dependency('rspec')
   s.add_development_dependency('rubocop')
   s.add_development_dependency('vcr')

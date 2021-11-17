@@ -29,7 +29,7 @@ For more information, please visit [Cryptopay API docs](https://developers.crypt
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'cryptopay'
+gem 'cryptopay-ruby'
 ```
 
 And then execute:
@@ -38,7 +38,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install cryptopay
+    $ gem install cryptopay-ruby
 
 ### Requirements
 
