@@ -18,7 +18,8 @@ Gem::Specification.new do |s|
 
   s.metadata = {
     'bug_tracker_uri' => 'https://github.com/cryptopay-dev/cryptopay-ruby/issues',
-    'source_code_uri' => 'https://github.com/cryptopay-dev/cryptopay-ruby'
+    'source_code_uri' => 'https://github.com/cryptopay-dev/cryptopay-ruby',
+    'rubygems_mfa_required' => 'true'
   }
 
   s.files = Dir.chdir(File.expand_path(__dir__)) do
