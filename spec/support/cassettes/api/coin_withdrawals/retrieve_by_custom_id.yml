@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://business-sandbox.cryptopay.me/api/coin_withdrawals/custom_id/PAYMENT-123
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Cryptopay Ruby v0.1.0
+      Accept:
+      - application/json
+      Date:
+      - Mon, 18 Oct 2021 07:09:29 GMT
+      Content-Type:
+      - application/json
+      Authorization:
+      - HMAC <API_KEY>:tVf2K0ni5KbpwJVbqPU8laqmToc=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 18 Oct 2021 07:09:30 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 69fff1060e0cc438-LED
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Cf-Cache-Status:
+      - DYNAMIC
+      Content-Security-Policy:
+      - 'form-action ''self''; frame-ancestors ''self''; base-uri ''self''; default-src
+        ''none''; script-src ''self''; connect-src ''self''; img-src ''self'' https:
+        data:; style-src ''self'' ''unsafe-inline'' https:; font-src ''self''; object-src
+        ''none''; plugin-types application/pdf; child-src ''self''; frame-src ''self'';
+        media-src ''self'''
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443";
+        ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"id":"cdb4faf8-5956-4d01-a00c-7c1b3267a126","custom_id":"PAYMENT-123","customer_id":null,"address":"2Mz3bcjSVHG8uQJpNjmCxp24VdTjwaqmFcJ","txid":"91b56ef2164ae37e95ce82723ff46c83a3e211b1a2cd1afcc21bee8f6c663d64","status":"completed","charged_amount":"100.0","charged_currency":"EUR","received_amount":"0.00184519","received_currency":"BTC","network_fee":"0.00000216","network_fee_level":"average","fee":"0.0","fee_currency":"BTC","exchange":{"pair":"BTCEUR","rate":"53590.0452","fee":"1.0","fee_currency":"EUR"},"risk":{"score":4.61,"level":"low","resource_name":"default","resource_category":"unknown"},"created_at":"2021-10-18T06:49:21+00:00"}}'
+  recorded_at: Mon, 18 Oct 2021 07:09:29 GMT
+recorded_with: VCR 6.0.0

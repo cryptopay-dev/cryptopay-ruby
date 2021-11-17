@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://business-sandbox.cryptopay.me/api/invoices/440d0d3a-52c4-4097-b5b1-d9b137aaca60/recalculations
+    body:
+      encoding: UTF-8
+      string: '{"force_commit":true}'
+    headers:
+      User-Agent:
+      - Cryptopay Ruby v0.1.0
+      Accept:
+      - application/json
+      Date:
+      - Thu, 14 Oct 2021 11:27:27 GMT
+      Content-Type:
+      - application/json
+      Authorization:
+      - HMAC <API_KEY>:3r82+KQuX3C/XSulIhTfhHj2VyA=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Thu, 14 Oct 2021 11:27:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '458'
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 69e075657b1d4c91-AMS
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Content-Security-Policy:
+      - 'form-action ''self''; frame-ancestors ''self''; base-uri ''self''; default-src
+        ''none''; script-src ''self''; connect-src ''self''; img-src ''self'' https:
+        data:; style-src ''self'' ''unsafe-inline'' https:; font-src ''self''; object-src
+        ''none''; plugin-types application/pdf; child-src ''self''; frame-src ''self'';
+        media-src ''self'''
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443";
+        ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"b6894a86-690b-4a99-a6ac-25a961f5012c","invoice_id":"440d0d3a-52c4-4097-b5b1-d9b137aaca60","pay_amount":"0.02623524","pay_currency":"ETH","price_amount":"89.21","price_currency":"EUR","fee":"0.9","fee_currency":"EUR","previous_pay_amount":"0.02987883","previous_price_amount":"100.0","previous_exchange_rate":"3346.8521","exchange":{"pair":"ETHEUR","rate":"3400.4427","fee":"0.0","fee_currency":"EUR"},"created_at":"2021-10-14T11:27:27+00:00"}}'
+  recorded_at: Thu, 14 Oct 2021 11:27:28 GMT
+recorded_with: VCR 6.0.0

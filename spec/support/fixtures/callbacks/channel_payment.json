@@ -1,0 +1,31 @@
+{
+  "type": "ChannelPayment",
+  "event": "completed",
+  "data": {
+    "id": "5cec347e-6603-4886-a39e-afad5f8bf0cc",
+    "txid": "0x938d502017772080ff6ed86c65f01bdada0bb8e950056f0c4d4ed9d4c62aeb29",
+    "paid_amount": "0.00275953",
+    "paid_currency": "ETH",
+    "received_amount": "9.59",
+    "received_currency": "EUR",
+    "fee": "0.1",
+    "fee_currency": "EUR",
+    "exchange": {
+      "pair": "ETHEUR",
+      "rate": "3512.7809"
+    },
+    "status": "completed",
+    "status_context": null,
+    "channel_id": "096b0350-8499-4537-b585-346f6a8c8e6e",
+    "custom_id": null,
+    "risk": {
+      "score": 3.4027701288128616,
+      "level": "low",
+      "resource_name": "default",
+      "resource_category": "unknown"
+    },
+    "refund_address": null,
+    "coin_withdrawal_id": null,
+    "created_at": "2021-10-15T07:43:56+00:00"
+  }
+}

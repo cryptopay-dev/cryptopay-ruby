@@ -1,0 +1,131 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://business-sandbox.cryptopay.me/api/exchange_transfers
+    body:
+      encoding: UTF-8
+      string: '{"charged_currency":"EUR","charged_amount":"100.0","received_currency":"BTC","received_amount":null,"force_commit":false}'
+    headers:
+      User-Agent:
+      - Cryptopay Ruby v0.1.0
+      Accept:
+      - application/json
+      Date:
+      - Mon, 18 Oct 2021 10:03:47 GMT
+      Content-Type:
+      - application/json
+      Authorization:
+      - HMAC <API_KEY>:Wr4/oyyyxqOu2Os9WDLu4EPRZYs=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Mon, 18 Oct 2021 10:03:48 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '259'
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 6a00f05bae83009f-AMS
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Content-Security-Policy:
+      - 'form-action ''self''; frame-ancestors ''self''; base-uri ''self''; default-src
+        ''none''; script-src ''self''; connect-src ''self''; img-src ''self'' https:
+        data:; style-src ''self'' ''unsafe-inline'' https:; font-src ''self''; object-src
+        ''none''; plugin-types application/pdf; child-src ''self''; frame-src ''self'';
+        media-src ''self'''
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443";
+        ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"8ec1fe49-6487-473e-888f-252f1f617f75","charged_amount":"100.0","charged_currency":"EUR","received_amount":"0.0018142","received_currency":"BTC","custom_id":null,"exchange":{"pair":"BTCEUR","rate":"54569.4206","fee":"1.0","fee_currency":"EUR"}}}'
+  recorded_at: Mon, 18 Oct 2021 10:03:48 GMT
+- request:
+    method: post
+    uri: https://business-sandbox.cryptopay.me/api/exchange_transfers/8ec1fe49-6487-473e-888f-252f1f617f75/commit
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Cryptopay Ruby v0.1.0
+      Accept:
+      - application/json
+      Date:
+      - Mon, 18 Oct 2021 10:03:48 GMT
+      Content-Type:
+      - application/json
+      Authorization:
+      - HMAC <API_KEY>:LYZ5twM2R2foD7E116fo1RmeMd0=
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 18 Oct 2021 10:03:49 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 6a00f06159284c86-AMS
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Cf-Cache-Status:
+      - DYNAMIC
+      Content-Security-Policy:
+      - 'form-action ''self''; frame-ancestors ''self''; base-uri ''self''; default-src
+        ''none''; script-src ''self''; connect-src ''self''; img-src ''self'' https:
+        data:; style-src ''self'' ''unsafe-inline'' https:; font-src ''self''; object-src
+        ''none''; plugin-types application/pdf; child-src ''self''; frame-src ''self'';
+        media-src ''self'''
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443";
+        ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"id":"8ec1fe49-6487-473e-888f-252f1f617f75","charged_amount":"100.0","charged_currency":"EUR","received_amount":"0.0018142","received_currency":"BTC","custom_id":null,"exchange":{"pair":"BTCEUR","rate":"54569.4206","fee":"1.0","fee_currency":"EUR"}}}'
+  recorded_at: Mon, 18 Oct 2021 10:03:49 GMT
+recorded_with: VCR 6.0.0

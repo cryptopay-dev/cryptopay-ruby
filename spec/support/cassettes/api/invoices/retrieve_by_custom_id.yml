@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://business-sandbox.cryptopay.me/api/invoices/custom_id/PAYMENT-123
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Cryptopay Ruby v0.1.0
+      Accept:
+      - application/json
+      Date:
+      - Thu, 14 Oct 2021 11:37:41 GMT
+      Content-Type:
+      - application/json
+      Authorization:
+      - HMAC <API_KEY>:G/41BA2mxnG7Nrdi7OEzQkEjqd4=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 14 Oct 2021 11:37:42 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 69e084687ab641a8-AMS
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Cf-Cache-Status:
+      - DYNAMIC
+      Content-Security-Policy:
+      - 'form-action ''self''; frame-ancestors ''self''; base-uri ''self''; default-src
+        ''none''; script-src ''self''; connect-src ''self''; img-src ''self'' https:
+        data:; style-src ''self'' ''unsafe-inline'' https:; font-src ''self''; object-src
+        ''none''; plugin-types application/pdf; child-src ''self''; frame-src ''self'';
+        media-src ''self'''
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443";
+        ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"id":"e177d55b-96cd-472f-be3c-e9b43f4345e2","custom_id":"PAYMENT-123","customer_id":null,"status":"new","status_context":null,"address":"0x145af124eaf0415c055632352c08e2efb2c6cf5c","uri":"ethereum:0x145af124eaf0415c055632352c08e2efb2c6cf5c?value=0.2922619e17","price_amount":"100.0","price_currency":"EUR","pay_amount":"0.02922619","pay_currency":"ETH","fee":"1.0","fee_currency":"EUR","paid_amount":"0.0","exchange":{"pair":"ETHEUR","rate":"3421.5898","fee":"0.0","fee_currency":"EUR"},"transactions":[],"name":null,"description":null,"metadata":null,"success_redirect_url":null,"unsuccess_redirect_url":null,"hosted_page_url":"https://hosted-business-sandbox.cryptopay.me/invoices/e177d55b-96cd-472f-be3c-e9b43f4345e2","created_at":"2021-10-14T11:34:30+00:00","expires_at":"2021-10-14T11:44:30+00:00"}}'
+  recorded_at: Thu, 14 Oct 2021 11:37:42 GMT
+recorded_with: VCR 6.0.0
