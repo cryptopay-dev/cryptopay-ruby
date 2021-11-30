@@ -1,0 +1,133 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://business-sandbox.cryptopay.me/api/invoices/c8233d57-78c8-4c36-b35e-940ae9067c78/recalculations
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Cryptopay Ruby v0.1.0
+      Accept:
+      - application/json
+      Date:
+      - Thu, 14 Oct 2021 11:30:34 GMT
+      Content-Type:
+      - application/json
+      Authorization:
+      - HMAC <API_KEY>:hTpY6B+OGEutNNo0hcGBcF6cq2Y=
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Thu, 14 Oct 2021 11:30:34 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '381'
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 69e079f7dab500ba-AMS
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Content-Security-Policy:
+      - 'form-action ''self''; frame-ancestors ''self''; base-uri ''self''; default-src
+        ''none''; script-src ''self''; connect-src ''self''; img-src ''self'' https:
+        data:; style-src ''self'' ''unsafe-inline'' https:; font-src ''self''; object-src
+        ''none''; plugin-types application/pdf; child-src ''self''; frame-src ''self'';
+        media-src ''self'''
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443";
+        ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"a62e9331-7128-4e55-ba3f-70ea35bcd858","invoice_id":"c8233d57-78c8-4c36-b35e-940ae9067c78","pay_amount":"0.00005","pay_currency":"USDT","price_amount":"0.00005","price_currency":"USDT","fee":"0.000001","fee_currency":"USDT","previous_pay_amount":"50.0","previous_price_amount":"50.0","previous_exchange_rate":null,"exchange":null,"created_at":"2021-10-14T11:30:34Z"}}'
+  recorded_at: Thu, 14 Oct 2021 11:30:34 GMT
+- request:
+    method: post
+    uri: https://business-sandbox.cryptopay.me/api/invoices/c8233d57-78c8-4c36-b35e-940ae9067c78/recalculations/a62e9331-7128-4e55-ba3f-70ea35bcd858/commit
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Cryptopay Ruby v0.1.0
+      Accept:
+      - application/json
+      Date:
+      - Thu, 14 Oct 2021 11:30:34 GMT
+      Content-Type:
+      - application/json
+      Authorization:
+      - HMAC <API_KEY>:VNmjzwMOEDn+CVDBMEHRRDXy/eA=
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 14 Oct 2021 11:30:35 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 69e079fc192a0132-AMS
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Cf-Cache-Status:
+      - DYNAMIC
+      Content-Security-Policy:
+      - 'form-action ''self''; frame-ancestors ''self''; base-uri ''self''; default-src
+        ''none''; script-src ''self''; connect-src ''self''; img-src ''self'' https:
+        data:; style-src ''self'' ''unsafe-inline'' https:; font-src ''self''; object-src
+        ''none''; plugin-types application/pdf; child-src ''self''; frame-src ''self'';
+        media-src ''self'''
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443";
+        ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"id":"a62e9331-7128-4e55-ba3f-70ea35bcd858","invoice_id":"c8233d57-78c8-4c36-b35e-940ae9067c78","pay_amount":"0.00005","pay_currency":"USDT","price_amount":"0.00005","price_currency":"USDT","fee":"0.000001","fee_currency":"USDT","previous_pay_amount":"50.0","previous_price_amount":"50.0","previous_exchange_rate":null,"exchange":null,"created_at":"2021-10-14T11:30:34+00:00"}}'
+  recorded_at: Thu, 14 Oct 2021 11:30:35 GMT
+recorded_with: VCR 6.0.0

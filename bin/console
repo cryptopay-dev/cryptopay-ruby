@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'bundler/setup'
+require 'dotenv/load'
+require 'cryptopay'
+require 'pry-byebug'
+
+client = Cryptopay::Client.new do |config|
+  config.api_url = Cryptopay::SANDBOX
+  config.api_key = ENV.fetch('API_KEY')
+  config.api_secret = ENV.fetch('API_SECRET')
+end
+
+Pry.start

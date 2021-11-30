@@ -1,0 +1,104 @@
+AllCops:
+  TargetRubyVersion: 2.6
+  EnabledByDefault: true
+  DisplayCopNames: true
+  NewCops: enable
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+    - cryptopay.gemspec
+
+Style/ConstantVisibility:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/Copyright:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/DocumentationMethod:
+  Enabled: false
+
+Style/MethodCallWithArgsParentheses:
+  Exclude:
+    - spec/**/*
+
+Style/MissingElse:
+  Enabled: false
+
+Style/OptionHash:
+  Exclude:
+    - lib/cryptopay/api/**/*
+    - lib/cryptopay/models/**/*
+
+Style/StringHashKeys:
+  Enabled: false
+
+Style/InlineComment:
+  Exclude:
+    - spec/**/*
+    - lib/cryptopay/models/**/*
+
+Layout/LineLength:
+  Exclude:
+    - lib/cryptopay/api/**/*
+    - lib/cryptopay/models/**/*
+
+Layout/MultilineAssignmentLayout:
+  Enabled: false
+
+Lint/ConstantResolution:
+  Enabled: false
+
+Lint/DuplicateMethods:
+  Exclude:
+    - lib/cryptopay/models/**/*
+
+Lint/NumberConversion:
+  Enabled: false
+
+Layout/RedundantLineBreak:
+  Enabled: false
+
+Lint/SymbolConversion:
+  Exclude:
+    - lib/cryptopay/models/**/*
+
+Lint/UselessAssignment:
+  Exclude:
+    - bin/console
+
+Metrics/AbcSize:
+  Exclude:
+    - lib/cryptopay/api/**/*
+    - lib/cryptopay/models/**/*
+    - lib/cryptopay/encoder.rb
+
+Metrics/ClassLength:
+  Exclude:
+    - lib/cryptopay/models/**/*
+
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - lib/cryptopay/api/**/*
+    - lib/cryptopay/models/**/*
+    - lib/cryptopay/encoder.rb
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - lib/cryptopay/models/**/*
+
+Metrics/MethodLength:
+  Exclude:
+    - lib/cryptopay/api/**/*
+    - lib/cryptopay/models/**/*
+    - lib/cryptopay/encoder.rb
+
+Naming/PredicateName:
+  Exclude:
+    - lib/cryptopay/models/**/*

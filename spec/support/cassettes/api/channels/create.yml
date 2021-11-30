@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://business-sandbox.cryptopay.me/api/channels
+    body:
+      encoding: UTF-8
+      string: '{"name":"Channel name","pay_currency":"BTC","receiver_currency":"EUR"}'
+    headers:
+      User-Agent:
+      - Cryptopay Ruby v0.1.0
+      Accept:
+      - application/json
+      Date:
+      - Mon, 18 Oct 2021 07:53:34 GMT
+      Content-Type:
+      - application/json
+      Authorization:
+      - HMAC <API_KEY>:fHnX+Pq04X7vdQdcisMYTN+9oTs=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Mon, 18 Oct 2021 07:53:35 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '460'
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 6a00319c1b3c009b-AMS
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Content-Security-Policy:
+      - 'form-action ''self''; frame-ancestors ''self''; base-uri ''self''; default-src
+        ''none''; script-src ''self''; connect-src ''self''; img-src ''self'' https:
+        data:; style-src ''self'' ''unsafe-inline'' https:; font-src ''self''; object-src
+        ''none''; plugin-types application/pdf; child-src ''self''; frame-src ''self'';
+        media-src ''self'''
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443";
+        ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"0ec10193-19dc-4aec-98c7-050ea3c96db9","status":"enabled","name":"Channel
+        name","description":null,"receiver_currency":"EUR","pay_currency":"BTC","address":"2NC4ymtetv3Ls8ZHoeNditLUeVcTXi1w6dM","project_id":"cfc93c44-fef3-4ccc-ac8f-090f8e702006","custom_id":null,"customer_id":null,"uri":"bitcoin:2NC4ymtetv3Ls8ZHoeNditLUeVcTXi1w6dM","hosted_page_url":"https://hosted-business-sandbox.cryptopay.me/channels/0ec10193-19dc-4aec-98c7-050ea3c96db9"}}'
+  recorded_at: Mon, 18 Oct 2021 07:53:35 GMT
+recorded_with: VCR 6.0.0

@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://business-sandbox.cryptopay.me/api/coin_withdrawals/network_fees
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Cryptopay Ruby v0.1.0
+      Accept:
+      - application/json
+      Date:
+      - Mon, 18 Oct 2021 07:09:29 GMT
+      Content-Type:
+      - application/json
+      Authorization:
+      - HMAC <API_KEY>:cXc/+cQZM86gBMj9kq/QLEUb2Rs=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 18 Oct 2021 07:09:30 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 69fff1071dfa84ec-LED
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Cf-Cache-Status:
+      - DYNAMIC
+      Content-Security-Policy:
+      - 'form-action ''self''; frame-ancestors ''self''; base-uri ''self''; default-src
+        ''none''; script-src ''self''; connect-src ''self''; img-src ''self'' https:
+        data:; style-src ''self'' ''unsafe-inline'' https:; font-src ''self''; object-src
+        ''none''; plugin-types application/pdf; child-src ''self''; frame-src ''self'';
+        media-src ''self'''
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443";
+        ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[{"level":"fast","fee":"0.00000216","currency":"BTC"},{"level":"average","fee":"0.00000216","currency":"BTC"},{"level":"slow","fee":"0.00000216","currency":"BTC"},{"level":"average","fee":"0.001","currency":"LTC"},{"level":"average","fee":"0.000045","currency":"XRP"},{"level":"average","fee":"0.0002531","currency":"ETH"},{"level":"average","fee":"0.0001","currency":"BCH"},{"level":"average","fee":"0.466609","currency":"USDT"},{"level":"average","fee":"1.02685956","currency":"DAI"}]}'
+  recorded_at: Mon, 18 Oct 2021 07:09:30 GMT
+recorded_with: VCR 6.0.0
