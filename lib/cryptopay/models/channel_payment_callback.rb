@@ -46,10 +46,6 @@ module Cryptopay
 
       properties.push('invalid value for "type", type cannot be nil.') if type.nil?
 
-      if !type.nil? && !['ChannelPayment'].include?(type)
-        properties.push('invalid value for type, must be one of "ChannelPayment"')
-      end
-
       properties.push('invalid value for "event", event cannot be nil.') if event.nil?
 
       if !event.nil? && !%w[created on_hold completed refunded cancelled].include?(event)

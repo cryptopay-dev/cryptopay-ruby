@@ -33,18 +33,22 @@ module Cryptopay
       @attributes = ENCODER.sanitize(attributes)
     end
 
+    # Channel name
     def name
       @attributes[:name]
     end
 
+    # Channel description
     def description
       @attributes[:description]
     end
 
+    # The cryptocurrency which you want to accept
     def pay_currency
       @attributes[:pay_currency]
     end
 
+    # The currency which all incoming transactions will be converted to
     def receiver_currency
       @attributes[:receiver_currency]
     end

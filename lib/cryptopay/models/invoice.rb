@@ -52,7 +52,7 @@ module Cryptopay
         'transactions': :'Array<InvoiceTransaction>',
         'name': :String,
         'description': :String,
-        'metadata': :Object,
+        'metadata': :'Hash<String, String>',
         'success_redirect_url': :String,
         'unsuccess_redirect_url': :String,
         'hosted_page_url': :String,

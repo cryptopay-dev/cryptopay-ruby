@@ -45,26 +45,32 @@ module Cryptopay
       @attributes = ENCODER.sanitize(attributes)
     end
 
+    # A recipient's cryptocurrency wallet address
     def address
       @attributes[:address]
     end
 
+    # An account currency to send a transaction from
     def charged_currency
       @attributes[:charged_currency]
     end
 
+    # Cryptocurrency type
     def received_currency
       @attributes[:received_currency]
     end
 
+    # All applicable fees will be deducted from this amount before processing a transaction instead of adding them on top it
     def charged_amount
       @attributes[:charged_amount]
     end
 
+    # An exact transaction amount to send. All applicable fees will be added on top of this amount and debited from your account
     def charged_amount_to_send
       @attributes[:charged_amount_to_send]
     end
 
+    # An exact transaction amount to send. All applicable fees will be added on top of this amount and debited from your account. Use this parameter if you want to send a transaction from cryptocurrency accounts only
     def received_amount
       @attributes[:received_amount]
     end
@@ -83,7 +89,7 @@ module Cryptopay
       @attributes[:network_fee_level]
     end
 
-    # Set `true` by default. Set `false` for two-step withdrawal and commit it within 30 seconds
+    # Is `false` if omitted. Set `true` by default. Set `false` for two-step withdrawal and commit it within 30 seconds
     def force_commit
       @attributes[:force_commit]
     end

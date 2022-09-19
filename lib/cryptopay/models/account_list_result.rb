@@ -8,10 +8,12 @@ module Cryptopay
     ENCODER = Encoder.new(
       name: 'Cryptopay::AccountListResult',
       attribute_map: {
-        'data': :data
+        'data': :data,
+        'meta': :meta
       },
       types: {
-        'data': :'Array<Account>'
+        'data': :'Array<Account>',
+        'meta': :Pagination
       },
       nullables: []
     )
@@ -27,6 +29,10 @@ module Cryptopay
       @attributes[:data]
     end
 
+    def meta
+      @attributes[:meta]
+    end
+
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def invalid_properties
@@ -38,6 +44,12 @@ module Cryptopay
         item.invalid_properties.each do |prop|
           properties.push("invalid value for \"data.#{index}\": #{prop}")
         end
+      end
+
+      properties.push('invalid value for "meta", meta cannot be nil.') if meta.nil?
+
+      meta&.invalid_properties&.each do |prop|
+        properties.push("invalid value for \"meta\": #{prop}")
       end
 
       properties

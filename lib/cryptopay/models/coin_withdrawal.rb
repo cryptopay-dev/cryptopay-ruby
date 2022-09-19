@@ -60,22 +60,27 @@ module Cryptopay
       @attributes = ENCODER.sanitize(attributes)
     end
 
+    # Coin withdrawal ID
     def id
       @attributes[:id]
     end
 
+    # Payment reference ID in your system
     def custom_id
       @attributes[:custom_id]
     end
 
+    # The reference ID of your customer
     def customer_id
       @attributes[:customer_id]
     end
 
+    # Recipient's cryptocurrency wallet address
     def address
       @attributes[:address]
     end
 
+    # Cryptocurrency transaction ID on the blockchain
     def txid
       @attributes[:txid]
     end
@@ -84,22 +89,27 @@ module Cryptopay
       @attributes[:status]
     end
 
+    # Payment amount. Amount charged from your account
     def charged_amount
       @attributes[:charged_amount]
     end
 
+    # Account currency the payment has been sent from
     def charged_currency
       @attributes[:charged_currency]
     end
 
+    # Cryptocurrency transaction amount. Exact amount received by a recipient
     def received_amount
       @attributes[:received_amount]
     end
 
+    # Cryptocurrency type
     def received_currency
       @attributes[:received_currency]
     end
 
+    # Network fee amount
     def network_fee
       @attributes[:network_fee]
     end
@@ -124,6 +134,7 @@ module Cryptopay
       @attributes[:risk]
     end
 
+    # Coin withdrawal creation date and time
     def created_at
       @attributes[:created_at]
     end

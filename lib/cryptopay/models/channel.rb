@@ -49,6 +49,7 @@ module Cryptopay
       @attributes = ENCODER.sanitize(attributes)
     end
 
+    # Channel ID
     def id
       @attributes[:id]
     end
@@ -57,42 +58,52 @@ module Cryptopay
       @attributes[:status]
     end
 
+    # Channel name
     def name
       @attributes[:name]
     end
 
+    # Channel description
     def description
       @attributes[:description]
     end
 
+    # The cryptocurrency which you want to accept
     def pay_currency
       @attributes[:pay_currency]
     end
 
+    # The currency which all incoming transactions will be converted to
     def receiver_currency
       @attributes[:receiver_currency]
     end
 
+    # Channel description
     def address
       @attributes[:address]
     end
 
+    # Project ID
     def project_id
       @attributes[:project_id]
     end
 
+    # The channel reference ID in your system
     def custom_id
       @attributes[:custom_id]
     end
 
+    # The reference ID of your customer
     def customer_id
       @attributes[:customer_id]
     end
 
+    # Channel URI. May be used for generating a QR code
     def uri
       @attributes[:uri]
     end
 
+    # Channel hosted page that renders channel details
     def hosted_page_url
       @attributes[:hosted_page_url]
     end

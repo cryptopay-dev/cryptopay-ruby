@@ -15,7 +15,7 @@ module Cryptopay
       types: {
         'id': :String,
         'currency': :String,
-        'refund_addresses': :Object
+        'refund_addresses': :'Hash<String, String>'
       },
       nullables: []
     )

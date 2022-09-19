@@ -27,7 +27,7 @@ module Cryptopay
         'customer_id': :String,
         'name': :String,
         'description': :String,
-        'metadata': :Object,
+        'metadata': :'Hash<String, String>',
         'success_redirect_url': :String,
         'unsuccess_redirect_url': :String
       },

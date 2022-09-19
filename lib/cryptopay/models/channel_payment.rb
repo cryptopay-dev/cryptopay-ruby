@@ -65,38 +65,47 @@ module Cryptopay
       @attributes = ENCODER.sanitize(attributes)
     end
 
+    # Channel payment ID
     def id
       @attributes[:id]
     end
 
+    # Channel ID
     def channel_id
       @attributes[:channel_id]
     end
 
+    # Cryptocurrency transaction amount that was received
     def paid_amount
       @attributes[:paid_amount]
     end
 
+    # Cryptocurrency type
     def paid_currency
       @attributes[:paid_currency]
     end
 
+    # Amount credited to your Cryptopay account
     def received_amount
       @attributes[:received_amount]
     end
 
+    # Account currency
     def received_currency
       @attributes[:received_currency]
     end
 
+    # Processing fee
     def fee
       @attributes[:fee]
     end
 
+    # Processing fee currency
     def fee_currency
       @attributes[:fee_currency]
     end
 
+    # Cryptocurrency transaction ID on the blockchain
     def txid
       @attributes[:txid]
     end
@@ -125,18 +134,22 @@ module Cryptopay
       @attributes[:coin_withdrawal_id]
     end
 
+    # Channel payment custom_id value inherited from its parent channel
     def custom_id
       @attributes[:custom_id]
     end
 
+    # The reference ID of your customer
     def customer_id
       @attributes[:customer_id]
     end
 
+    # Channel cryptocurrency address
     def address
       @attributes[:address]
     end
 
+    # Channel payment creation date and time
     def created_at
       @attributes[:created_at]
     end

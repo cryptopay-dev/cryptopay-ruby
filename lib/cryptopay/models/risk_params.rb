@@ -15,7 +15,7 @@ module Cryptopay
       types: {
         'address': :String,
         'currency': :String,
-        'type': :String
+        'type': :RiskType
       },
       nullables: []
     )

@@ -57,38 +57,47 @@ module Cryptopay
       @attributes = ENCODER.sanitize(attributes)
     end
 
+    # Account transaction ID
     def id
       @attributes[:id]
     end
 
+    # Transaction description
     def custom_id
       @attributes[:custom_id]
     end
 
+    # The reference ID of your customer
     def customer_id
       @attributes[:customer_id]
     end
 
+    # Transaction amount
     def amount
       @attributes[:amount]
     end
 
+    # Transaction currency
     def currency
       @attributes[:currency]
     end
 
+    # Account subtotal
     def balance
       @attributes[:balance]
     end
 
+    # Transaction fee details
     def fee
       @attributes[:fee]
     end
 
+    # Transaction fee currency
     def fee_currency
       @attributes[:fee_currency]
     end
 
+    # Transaction reference ID in Cryptopay
     def reference_id
       @attributes[:reference_id]
     end
@@ -97,14 +106,17 @@ module Cryptopay
       @attributes[:reference_type]
     end
 
+    # Transaction description
     def description
       @attributes[:description]
     end
 
+    # Transaction status
     def status
       @attributes[:status]
     end
 
+    # Transaction status context
     def status_context
       @attributes[:status_context]
     end
@@ -113,6 +125,7 @@ module Cryptopay
       @attributes[:risk]
     end
 
+    # Transaction creation date and time
     def created_at
       @attributes[:created_at]
     end
