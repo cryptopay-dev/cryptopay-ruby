@@ -26,6 +26,7 @@ module Cryptopay
         'custom_id': :custom_id,
         'customer_id': :customer_id,
         'address': :address,
+        'network': :network,
         'created_at': :created_at
       },
       types: {
@@ -47,6 +48,7 @@ module Cryptopay
         'custom_id': :String,
         'customer_id': :String,
         'address': :String,
+        'network': :String,
         'created_at': :Time
       },
       nullables: %i[
@@ -147,6 +149,11 @@ module Cryptopay
     # Channel cryptocurrency address
     def address
       @attributes[:address]
+    end
+
+    # Cryptocurrency network
+    def network
+      @attributes[:network]
     end
 
     # Channel payment creation date and time

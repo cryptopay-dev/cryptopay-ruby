@@ -11,6 +11,7 @@ module Cryptopay
         'address': :address,
         'charged_currency': :charged_currency,
         'received_currency': :received_currency,
+        'network': :network,
         'charged_amount': :charged_amount,
         'charged_amount_to_send': :charged_amount_to_send,
         'received_amount': :received_amount,
@@ -23,6 +24,7 @@ module Cryptopay
         'address': :String,
         'charged_currency': :String,
         'received_currency': :String,
+        'network': :String,
         'charged_amount': :Decimal,
         'charged_amount_to_send': :Decimal,
         'received_amount': :Decimal,
@@ -58,6 +60,11 @@ module Cryptopay
     # Cryptocurrency type
     def received_currency
       @attributes[:received_currency]
+    end
+
+    # Cryptocurrency network
+    def network
+      @attributes[:network]
     end
 
     # All applicable fees will be deducted from this amount before processing a transaction instead of adding them on top it

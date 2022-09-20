@@ -14,6 +14,7 @@ module Cryptopay
         'status': :status,
         'status_context': :status_context,
         'address': :address,
+        'network': :network,
         'uri': :uri,
         'price_amount': :price_amount,
         'price_currency': :price_currency,
@@ -40,6 +41,7 @@ module Cryptopay
         'status': :InvoiceStatus,
         'status_context': :InvoiceStatusContext,
         'address': :String,
+        'network': :String,
         'uri': :String,
         'price_amount': :Decimal,
         'price_currency': :String,
@@ -104,6 +106,11 @@ module Cryptopay
     # Invoice cryptocurrency address
     def address
       @attributes[:address]
+    end
+
+    # Cryptocurrency network
+    def network
+      @attributes[:network]
     end
 
     # Invoice URI. May be used for generating a QR code
@@ -211,6 +218,8 @@ module Cryptopay
       end
 
       properties.push('invalid value for "address", address cannot be nil.') if address.nil?
+
+      properties.push('invalid value for "network", network cannot be nil.') if network.nil?
 
       properties.push('invalid value for "uri", uri cannot be nil.') if uri.nil?
 

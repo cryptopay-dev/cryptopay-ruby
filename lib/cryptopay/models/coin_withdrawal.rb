@@ -12,6 +12,7 @@ module Cryptopay
         'custom_id': :custom_id,
         'customer_id': :customer_id,
         'address': :address,
+        'network': :network,
         'txid': :txid,
         'status': :status,
         'charged_amount': :charged_amount,
@@ -31,6 +32,7 @@ module Cryptopay
         'custom_id': :String,
         'customer_id': :String,
         'address': :String,
+        'network': :String,
         'txid': :String,
         'status': :CoinWithdrawalStatus,
         'charged_amount': :Decimal,
@@ -78,6 +80,11 @@ module Cryptopay
     # Recipient's cryptocurrency wallet address
     def address
       @attributes[:address]
+    end
+
+    # Cryptocurrency network
+    def network
+      @attributes[:network]
     end
 
     # Cryptocurrency transaction ID on the blockchain
@@ -145,6 +152,8 @@ module Cryptopay
       properties = []
 
       properties.push('invalid value for "address", address cannot be nil.') if address.nil?
+
+      properties.push('invalid value for "network", network cannot be nil.') if network.nil?
 
       properties.push('invalid value for "status", status cannot be nil.') if status.nil?
 

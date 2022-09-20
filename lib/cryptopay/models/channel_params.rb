@@ -11,6 +11,7 @@ module Cryptopay
         'name': :name,
         'description': :description,
         'pay_currency': :pay_currency,
+        'network': :network,
         'receiver_currency': :receiver_currency,
         'custom_id': :custom_id,
         'customer_id': :customer_id
@@ -19,6 +20,7 @@ module Cryptopay
         'name': :String,
         'description': :String,
         'pay_currency': :String,
+        'network': :String,
         'receiver_currency': :String,
         'custom_id': :String,
         'customer_id': :String
@@ -46,6 +48,11 @@ module Cryptopay
     # The cryptocurrency which you want to accept
     def pay_currency
       @attributes[:pay_currency]
+    end
+
+    # Cryptocurrency network
+    def network
+      @attributes[:network]
     end
 
     # The currency which all incoming transactions will be converted to

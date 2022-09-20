@@ -11,6 +11,7 @@ module Cryptopay
         'price_amount': :price_amount,
         'price_currency': :price_currency,
         'pay_currency': :pay_currency,
+        'network': :network,
         'custom_id': :custom_id,
         'customer_id': :customer_id,
         'name': :name,
@@ -23,6 +24,7 @@ module Cryptopay
         'price_amount': :Decimal,
         'price_currency': :String,
         'pay_currency': :String,
+        'network': :String,
         'custom_id': :String,
         'customer_id': :String,
         'name': :String,
@@ -54,6 +56,11 @@ module Cryptopay
     # The cryptocurrency that the invoice must be paid in
     def pay_currency
       @attributes[:pay_currency]
+    end
+
+    # Cryptocurrency network
+    def network
+      @attributes[:network]
     end
 
     # The payment reference ID in your system

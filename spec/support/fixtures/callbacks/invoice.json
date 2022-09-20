@@ -8,6 +8,7 @@
     "status": "completed",
     "status_context": null,
     "address": "0x516cf64763b17893f9defa60e35d6bee26535ef9",
+    "network": "ethereum",
     "uri": "ethereum:0x23a2e5f75cdfe03763d929379f5dc3f14f7045cd/transfer?address=0x516cf64763b17893f9defa60e35d6bee26535ef9&uint256=0.5e2",
     "price_amount": "0.00005",
     "price_currency": "USDT",

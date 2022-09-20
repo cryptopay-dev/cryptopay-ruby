@@ -5,6 +5,7 @@
     "id": "464da305-0a23-4152-be2c-19757b348437",
     "custom_id": null,
     "address": "0x7d00c40f923f1cdb99a5a8e692db8a8804e06715",
+    "network": "ethereum",
     "txid": "0x938d502017772080ff6ed86c65f01bdada0bb8e950056f0c4d4ed9d4c62aeb29",
     "status": "sent",
     "charged_amount": "10.0",

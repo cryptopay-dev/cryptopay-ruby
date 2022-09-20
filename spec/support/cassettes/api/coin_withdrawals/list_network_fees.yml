@@ -61,6 +61,6 @@ http_interactions:
         ma=86400
     body:
       encoding: ASCII-8BIT
-      string: '{"data":[{"level":"fast","fee":"0.00000216","currency":"BTC"},{"level":"average","fee":"0.00000216","currency":"BTC"},{"level":"slow","fee":"0.00000216","currency":"BTC"},{"level":"average","fee":"0.001","currency":"LTC"},{"level":"average","fee":"0.000045","currency":"XRP"},{"level":"average","fee":"0.0002531","currency":"ETH"},{"level":"average","fee":"0.0001","currency":"BCH"},{"level":"average","fee":"0.466609","currency":"USDT"},{"level":"average","fee":"1.02685956","currency":"DAI"}]}'
+      string: '{"data":[{"level":"fast","fee":"0.00000216","currency":"BTC","network":"bitcoin"},{"level":"average","fee":"0.00000216","currency":"BTC","network":"bitcoin"},{"level":"slow","fee":"0.00000216","currency":"BTC","network":"bitcoin"},{"level":"average","fee":"0.001","currency":"LTC","network":"litecoin"},{"level":"average","fee":"0.000045","currency":"XRP","network":"ripple"},{"level":"average","fee":"0.0002531","currency":"ETH","network":"ethereum"},{"level":"average","fee":"0.0001","currency":"BCH","network":"bitcoin_cash"},{"level":"average","fee":"0.466609","currency":"USDT","network":"ethereum"},{"level":"average","fee":"1.02685956","currency":"DAI","network":"ethereum"}]}'
   recorded_at: Mon, 18 Oct 2021 07:09:30 GMT
 recorded_with: VCR 6.0.0

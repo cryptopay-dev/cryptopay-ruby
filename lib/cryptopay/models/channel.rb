@@ -15,6 +15,7 @@ module Cryptopay
         'pay_currency': :pay_currency,
         'receiver_currency': :receiver_currency,
         'address': :address,
+        'network': :network,
         'project_id': :project_id,
         'custom_id': :custom_id,
         'customer_id': :customer_id,
@@ -29,6 +30,7 @@ module Cryptopay
         'pay_currency': :String,
         'receiver_currency': :String,
         'address': :String,
+        'network': :String,
         'project_id': :String,
         'custom_id': :String,
         'customer_id': :String,
@@ -83,6 +85,11 @@ module Cryptopay
       @attributes[:address]
     end
 
+    # Cryptocurrency network
+    def network
+      @attributes[:network]
+    end
+
     # Project ID
     def project_id
       @attributes[:project_id]
@@ -130,6 +137,8 @@ module Cryptopay
       end
 
       properties.push('invalid value for "address", address cannot be nil.') if address.nil?
+
+      properties.push('invalid value for "network", network cannot be nil.') if network.nil?
 
       properties.push('invalid value for "project_id", project_id cannot be nil.') if project_id.nil?
 

@@ -51,6 +51,8 @@ module Cryptopay
 
       properties.push('invalid value for "currency", currency cannot be nil.') if currency.nil?
 
+      properties.push('invalid value for "refund_addresses", refund_addresses cannot be nil.') if refund_addresses.nil?
+
       properties
     end
 
