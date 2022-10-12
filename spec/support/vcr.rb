@@ -9,6 +9,6 @@ VCR.configure do |c|
   c.default_cassette_options = { record: :once }
   c.configure_rspec_metadata!
 
-  c.filter_sensitive_data('<API_KEY>') { ENV['API_KEY'] }
-  c.filter_sensitive_data('<API_SECRET>') { ENV['API_SECRET'] }
+  c.filter_sensitive_data('<API_KEY>') { ENV.fetch('API_KEY', nil) }
+  c.filter_sensitive_data('<API_SECRET>') { ENV.fetch('API_SECRET', nil) }
 end
