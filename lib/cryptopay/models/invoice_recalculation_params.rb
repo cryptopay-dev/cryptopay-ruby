@@ -23,7 +23,7 @@ module Cryptopay
       @attributes = ENCODER.sanitize(attributes)
     end
 
-    # Set `true` by default. Set `false` for two-step recalculation and commit it within 30 seconds
+    # Is `false` if omitted. Set `true` by default. Set `false` for two-step recalculation and commit it within 30 seconds
     def force_commit
       @attributes[:force_commit]
     end

@@ -37,26 +37,32 @@ module Cryptopay
       @attributes = ENCODER.sanitize(attributes)
     end
 
+    # Exchange transaction ID
     def id
       @attributes[:id]
     end
 
+    # Amount converted
     def charged_amount
       @attributes[:charged_amount]
     end
 
+    # Account currency the funds converted from
     def charged_currency
       @attributes[:charged_currency]
     end
 
+    # Amount to be received upon exchange execution
     def received_amount
       @attributes[:received_amount]
     end
 
+    # Account currency the funds converted to
     def received_currency
       @attributes[:received_currency]
     end
 
+    # Exchange transaction reference ID in your system
     def custom_id
       @attributes[:custom_id]
     end

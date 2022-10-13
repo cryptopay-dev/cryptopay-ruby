@@ -46,8 +46,6 @@ module Cryptopay
 
       properties.push('invalid value for "type", type cannot be nil.') if type.nil?
 
-      properties.push('invalid value for type, must be one of "Invoice"') if !type.nil? && !['Invoice'].include?(type)
-
       properties.push('invalid value for "event", event cannot be nil.') if event.nil?
 
       if !event.nil? && !%w[created refunded recalculated status_changed transaction_created transaction_confirmed].include?(event)

@@ -10,12 +10,14 @@ module Cryptopay
       attribute_map: {
         'level': :level,
         'fee': :fee,
-        'currency': :currency
+        'currency': :currency,
+        'network': :network
       },
       types: {
         'level': :NetworkFeeLevel,
         'fee': :Decimal,
-        'currency': :String
+        'currency': :String,
+        'network': :String
       },
       nullables: []
     )
@@ -39,6 +41,10 @@ module Cryptopay
       @attributes[:currency]
     end
 
+    def network
+      @attributes[:network]
+    end
+
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def invalid_properties
@@ -53,6 +59,8 @@ module Cryptopay
       properties.push('invalid value for "fee", fee cannot be nil.') if fee.nil?
 
       properties.push('invalid value for "currency", currency cannot be nil.') if currency.nil?
+
+      properties.push('invalid value for "network", network cannot be nil.') if network.nil?
 
       properties
     end

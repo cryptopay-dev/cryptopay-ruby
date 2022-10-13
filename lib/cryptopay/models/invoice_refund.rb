@@ -16,6 +16,7 @@ module Cryptopay
         'fee': :fee,
         'fee_currency': :fee_currency,
         'address': :address,
+        'network': :network,
         'txid': :txid,
         'risk': :risk,
         'created_at': :created_at
@@ -29,6 +30,7 @@ module Cryptopay
         'fee': :Decimal,
         'fee_currency': :String,
         'address': :String,
+        'network': :String,
         'txid': :String,
         'risk': :Risk,
         'created_at': :Time
@@ -87,6 +89,11 @@ module Cryptopay
       @attributes[:address]
     end
 
+    # Cryptocurrency network
+    def network
+      @attributes[:network]
+    end
+
     # Cryptocurrency transaction ID on the blockchain
     def txid
       @attributes[:txid]
@@ -117,6 +124,8 @@ module Cryptopay
       properties.push('invalid value for "fee", fee cannot be nil.') if fee.nil?
 
       properties.push('invalid value for "fee_currency", fee_currency cannot be nil.') if fee_currency.nil?
+
+      properties.push('invalid value for "network", network cannot be nil.') if network.nil?
 
       risk&.invalid_properties&.each do |prop|
         properties.push("invalid value for \"risk\": #{prop}")

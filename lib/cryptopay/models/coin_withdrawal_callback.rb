@@ -46,10 +46,6 @@ module Cryptopay
 
       properties.push('invalid value for "type", type cannot be nil.') if type.nil?
 
-      if !type.nil? && !['CoinWithdrawal'].include?(type)
-        properties.push('invalid value for type, must be one of "CoinWithdrawal"')
-      end
-
       properties.push('invalid value for "event", event cannot be nil.') if event.nil?
 
       if !event.nil? && !%w[created status_changed].include?(event)

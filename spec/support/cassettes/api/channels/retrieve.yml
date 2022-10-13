@@ -61,6 +61,6 @@ http_interactions:
         ma=86400
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"id":"15d0bb11-1e9f-4295-bec5-abd9d5a906a1","status":"enabled","name":"0","description":null,"receiver_currency":"EUR","pay_currency":"BTC","address":"2Mz3bcjSVHG8uQJpNjmCxp24VdTjwaqmFcJ","project_id":"cfc93c44-fef3-4ccc-ac8f-090f8e702006","custom_id":null,"customer_id":null,"uri":"bitcoin:2Mz3bcjSVHG8uQJpNjmCxp24VdTjwaqmFcJ","hosted_page_url":"https://hosted-business-sandbox.cryptopay.me/channels/15d0bb11-1e9f-4295-bec5-abd9d5a906a1"}}'
+      string: '{"data":{"id":"15d0bb11-1e9f-4295-bec5-abd9d5a906a1","status":"enabled","name":"0","description":null,"receiver_currency":"EUR","pay_currency":"BTC","address":"2Mz3bcjSVHG8uQJpNjmCxp24VdTjwaqmFcJ","network":"bitcoin","project_id":"cfc93c44-fef3-4ccc-ac8f-090f8e702006","custom_id":null,"customer_id":null,"uri":"bitcoin:2Mz3bcjSVHG8uQJpNjmCxp24VdTjwaqmFcJ","hosted_page_url":"https://hosted-business-sandbox.cryptopay.me/channels/15d0bb11-1e9f-4295-bec5-abd9d5a906a1"}}'
   recorded_at: Mon, 18 Oct 2021 07:53:33 GMT
 recorded_with: VCR 6.0.0

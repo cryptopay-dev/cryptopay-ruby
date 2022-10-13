@@ -36,26 +36,32 @@ module Cryptopay
       @attributes = ENCODER.sanitize(attributes)
     end
 
+    # Account currency the funds to be converted from
     def charged_currency
       @attributes[:charged_currency]
     end
 
+    # Amount to be converted
     def charged_amount
       @attributes[:charged_amount]
     end
 
+    # Account currency the funds to be converted to
     def received_currency
       @attributes[:received_currency]
     end
 
+    # Amount to be received upon exchange execution
     def received_amount
       @attributes[:received_amount]
     end
 
+    # Exchange transaction reference ID in your system
     def custom_id
       @attributes[:custom_id]
     end
 
+    # Is `false` if omitted. Set `true` by default. Set `false` for two-step recalculation and commit it within 30 seconds
     def force_commit
       @attributes[:force_commit]
     end

@@ -13,7 +13,7 @@ module Cryptopay
       },
       types: {
         'currency': :String,
-        'refund_addresses': :Object
+        'refund_addresses': :'Hash<String, String>'
       },
       nullables: []
     )
@@ -30,7 +30,7 @@ module Cryptopay
       @attributes[:currency]
     end
 
-    # This object allows you specify 1 cryptocurrency address for each type of supported cryptocurrencies i.e. BTC, ETH, XRP, LTC and BCH. In case Cryptopay detects a High-Risk transaction, such transaction will not be processed. Instead, it will be sent to the address specified for respective cryptocurrency. If you do not specify any addresses here, High-Risk payments will be put on hold
+    # This object allows you to specify 1 cryptocurrency address for each type of supported cryptocurrencies i.e. BTC, ETH, XRP, LTC and BCH. In case Cryptopay detects a High-Risk transaction, such transaction will not be processed. Instead, it will be sent to the address specified for respective cryptocurrency. If you do not specify any addresses here, High-Risk payments will be put on hold
     def refund_addresses
       @attributes[:refund_addresses]
     end

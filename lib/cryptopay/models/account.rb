@@ -29,18 +29,22 @@ module Cryptopay
       @attributes = ENCODER.sanitize(attributes)
     end
 
+    # Account ID
     def id
       @attributes[:id]
     end
 
+    # Account currency
     def currency
       @attributes[:currency]
     end
 
+    # Account balance
     def balance
       @attributes[:balance]
     end
 
+    # Project ID which the account belongs to
     def project_id
       @attributes[:project_id]
     end

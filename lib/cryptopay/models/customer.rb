@@ -15,7 +15,7 @@ module Cryptopay
       types: {
         'id': :String,
         'currency': :String,
-        'refund_addresses': :Object
+        'refund_addresses': :'Hash<String, String>'
       },
       nullables: []
     )
@@ -50,6 +50,8 @@ module Cryptopay
       properties.push('invalid value for "id", id cannot be nil.') if id.nil?
 
       properties.push('invalid value for "currency", currency cannot be nil.') if currency.nil?
+
+      properties.push('invalid value for "refund_addresses", refund_addresses cannot be nil.') if refund_addresses.nil?
 
       properties
     end

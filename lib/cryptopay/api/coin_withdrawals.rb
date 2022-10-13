@@ -64,13 +64,18 @@ module Cryptopay
 
     # List network fees
     # @param [Hash] opts the optional parameters
+    # @option opts [Boolean] :all_networks Is &#x60;false&#x60; if omitted. Set &#x60;true&#x60; to return network fees for all cryptocurrency networks
     # @return [NetworkFeeListResult]
-    def list_network_fees(_opts = {})
+    def list_network_fees(opts = {})
       path = '/api/coin_withdrawals/network_fees'
+
+      query_params = {}
+      query_params[:all_networks] = opts[:all_networks] unless opts[:all_networks].nil?
 
       req = Request.new(
         method: :get,
-        path: path
+        path: path,
+        query_params: query_params
       )
 
       connection.call(req, return_type: NetworkFeeListResult)

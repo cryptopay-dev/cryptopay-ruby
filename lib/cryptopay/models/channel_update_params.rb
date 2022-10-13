@@ -29,10 +29,12 @@ module Cryptopay
       @attributes = ENCODER.sanitize(attributes)
     end
 
+    # Channel name
     def name
       @attributes[:name]
     end
 
+    # Channel description
     def description
       @attributes[:description]
     end

@@ -15,6 +15,7 @@ module Cryptopay
         'pay_currency': :pay_currency,
         'receiver_currency': :receiver_currency,
         'address': :address,
+        'network': :network,
         'project_id': :project_id,
         'custom_id': :custom_id,
         'customer_id': :customer_id,
@@ -29,6 +30,7 @@ module Cryptopay
         'pay_currency': :String,
         'receiver_currency': :String,
         'address': :String,
+        'network': :String,
         'project_id': :String,
         'custom_id': :String,
         'customer_id': :String,
@@ -49,6 +51,7 @@ module Cryptopay
       @attributes = ENCODER.sanitize(attributes)
     end
 
+    # Channel ID
     def id
       @attributes[:id]
     end
@@ -57,42 +60,57 @@ module Cryptopay
       @attributes[:status]
     end
 
+    # Channel name
     def name
       @attributes[:name]
     end
 
+    # Channel description
     def description
       @attributes[:description]
     end
 
+    # The cryptocurrency which you want to accept
     def pay_currency
       @attributes[:pay_currency]
     end
 
+    # The currency which all incoming transactions will be converted to
     def receiver_currency
       @attributes[:receiver_currency]
     end
 
+    # Channel description
     def address
       @attributes[:address]
     end
 
+    # Cryptocurrency network
+    def network
+      @attributes[:network]
+    end
+
+    # Project ID
     def project_id
       @attributes[:project_id]
     end
 
+    # The channel reference ID in your system
     def custom_id
       @attributes[:custom_id]
     end
 
+    # The reference ID of your customer
     def customer_id
       @attributes[:customer_id]
     end
 
+    # Channel URI. May be used for generating a QR code
     def uri
       @attributes[:uri]
     end
 
+    # Channel hosted page that renders channel details
     def hosted_page_url
       @attributes[:hosted_page_url]
     end
@@ -119,6 +137,8 @@ module Cryptopay
       end
 
       properties.push('invalid value for "address", address cannot be nil.') if address.nil?
+
+      properties.push('invalid value for "network", network cannot be nil.') if network.nil?
 
       properties.push('invalid value for "project_id", project_id cannot be nil.') if project_id.nil?
 

@@ -30,11 +30,11 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency('faraday', '~> 1.0', '>= 1.0.1')
 
-  s.add_development_dependency('dotenv')
-  s.add_development_dependency('pry-byebug')
-  s.add_development_dependency('rake')
-  s.add_development_dependency('rspec')
-  s.add_development_dependency('rubocop')
-  s.add_development_dependency('vcr')
-  s.add_development_dependency('webmock')
+  s.add_development_dependency('dotenv', '~> 2.7')
+  s.add_development_dependency('pry-byebug', '~> 3.9')
+  s.add_development_dependency('rake', '~> 13.0')
+  s.add_development_dependency('rspec', '~> 3.11')
+  s.add_development_dependency('rubocop', '~> 1.25')
+  s.add_development_dependency('vcr', '~> 6.0')
+  s.add_development_dependency('webmock', '~> 3.14')
 end

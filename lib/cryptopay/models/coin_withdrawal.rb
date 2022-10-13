@@ -12,6 +12,7 @@ module Cryptopay
         'custom_id': :custom_id,
         'customer_id': :customer_id,
         'address': :address,
+        'network': :network,
         'txid': :txid,
         'status': :status,
         'charged_amount': :charged_amount,
@@ -31,6 +32,7 @@ module Cryptopay
         'custom_id': :String,
         'customer_id': :String,
         'address': :String,
+        'network': :String,
         'txid': :String,
         'status': :CoinWithdrawalStatus,
         'charged_amount': :Decimal,
@@ -60,22 +62,32 @@ module Cryptopay
       @attributes = ENCODER.sanitize(attributes)
     end
 
+    # Coin withdrawal ID
     def id
       @attributes[:id]
     end
 
+    # Payment reference ID in your system
     def custom_id
       @attributes[:custom_id]
     end
 
+    # The reference ID of your customer
     def customer_id
       @attributes[:customer_id]
     end
 
+    # Recipient's cryptocurrency wallet address
     def address
       @attributes[:address]
     end
 
+    # Cryptocurrency network
+    def network
+      @attributes[:network]
+    end
+
+    # Cryptocurrency transaction ID on the blockchain
     def txid
       @attributes[:txid]
     end
@@ -84,22 +96,27 @@ module Cryptopay
       @attributes[:status]
     end
 
+    # Payment amount. Amount charged from your account
     def charged_amount
       @attributes[:charged_amount]
     end
 
+    # Account currency the payment has been sent from
     def charged_currency
       @attributes[:charged_currency]
     end
 
+    # Cryptocurrency transaction amount. Exact amount received by a recipient
     def received_amount
       @attributes[:received_amount]
     end
 
+    # Cryptocurrency type
     def received_currency
       @attributes[:received_currency]
     end
 
+    # Network fee amount
     def network_fee
       @attributes[:network_fee]
     end
@@ -124,6 +141,7 @@ module Cryptopay
       @attributes[:risk]
     end
 
+    # Coin withdrawal creation date and time
     def created_at
       @attributes[:created_at]
     end
@@ -134,6 +152,8 @@ module Cryptopay
       properties = []
 
       properties.push('invalid value for "address", address cannot be nil.') if address.nil?
+
+      properties.push('invalid value for "network", network cannot be nil.') if network.nil?
 
       properties.push('invalid value for "status", status cannot be nil.') if status.nil?
 
