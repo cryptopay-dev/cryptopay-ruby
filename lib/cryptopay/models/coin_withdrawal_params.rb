@@ -96,7 +96,7 @@ module Cryptopay
       @attributes[:network_fee_level]
     end
 
-    # Is `false` if omitted. Set `true` by default. Set `false` for two-step withdrawal and commit it within 30 seconds
+    # Is `false` if omitted. Set `true` to turn off two-step withdrawal. Set `false` for two-step withdrawal and commit it within 30 seconds
     def force_commit
       @attributes[:force_commit]
     end

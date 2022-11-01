@@ -11,7 +11,8 @@ module Cryptopay
                 :exchange_transfers,
                 :customers,
                 :risks,
-                :callbacks
+                :callbacks,
+                :coins
 
     def initialize(&block)
       config = Config.new(&block)
@@ -34,6 +35,7 @@ module Cryptopay
       @exchange_transfers = ExchangeTransfers.new(connection)
       @customers = Customers.new(connection)
       @risks = Risks.new(connection)
+      @coins = Coins.new(connection)
     end
   end
 end
