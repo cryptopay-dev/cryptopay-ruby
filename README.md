@@ -14,6 +14,7 @@ For more information, please visit [Cryptopay API docs](https://developers.crypt
    * [Accounts](#accounts)
    * [Channels](#channels)
    * [CoinWithdrawals](#coinwithdrawals)
+   * [Coins](#coins)
    * [Customers](#customers)
    * [ExchangeTransfers](#exchangetransfers)
    * [Invoices](#invoices)
@@ -241,6 +242,17 @@ custom_id = 'PAYMENT-123'
 
 result = client.coin_withdrawals.retrieve_by_custom_id(custom_id)
 p result # => <CoinWithdrawalResult data=...>
+```
+
+### Coins
+
+
+#### List supported coins
+
+
+```ruby
+result = client.coins.list
+p result # => <CoinListResult data=...>
 ```
 
 ### Customers

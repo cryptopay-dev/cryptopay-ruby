@@ -61,7 +61,7 @@ module Cryptopay
       @attributes[:custom_id]
     end
 
-    # Is `false` if omitted. Set `true` by default. Set `false` for two-step recalculation and commit it within 30 seconds
+    # Is `false` if omitted. Set `true` to turn off two-step exchange. Set `false` for two-step exchange and commit it within 30 seconds
     def force_commit
       @attributes[:force_commit]
     end

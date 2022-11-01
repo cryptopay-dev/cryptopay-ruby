@@ -4,14 +4,20 @@
 # DO NOT EDIT
 
 module Cryptopay
-  class InvoiceRecalculationParams
+  class Coin
     ENCODER = Encoder.new(
-      name: 'Cryptopay::InvoiceRecalculationParams',
+      name: 'Cryptopay::Coin',
       attribute_map: {
-        'force_commit': :force_commit
+        'currency': :currency,
+        'name': :name,
+        'logo_url': :logo_url,
+        'networks': :networks
       },
       types: {
-        'force_commit': :Boolean
+        'currency': :String,
+        'name': :String,
+        'logo_url': :String,
+        'networks': :'Array<CoinNetwork>'
       },
       nullables: []
     )
@@ -23,15 +29,42 @@ module Cryptopay
       @attributes = ENCODER.sanitize(attributes)
     end
 
-    # Is `false` if omitted. Set `true` to turn off two-step recalculation. Set `false` for two-step recalculation and commit it within 30 seconds
-    def force_commit
-      @attributes[:force_commit]
+    def currency
+      @attributes[:currency]
+    end
+
+    def name
+      @attributes[:name]
+    end
+
+    def logo_url
+      @attributes[:logo_url]
+    end
+
+    def networks
+      @attributes[:networks]
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def invalid_properties
-      []
+      properties = []
+
+      properties.push('invalid value for "currency", currency cannot be nil.') if currency.nil?
+
+      properties.push('invalid value for "name", name cannot be nil.') if name.nil?
+
+      properties.push('invalid value for "logo_url", logo_url cannot be nil.') if logo_url.nil?
+
+      properties.push('invalid value for "networks", networks cannot be nil.') if networks.nil?
+
+      networks&.each_with_index do |item, index|
+        item.invalid_properties.each do |prop|
+          properties.push("invalid value for \"networks.#{index}\": #{prop}")
+        end
+      end
+
+      properties
     end
 
     # Check to see if the all the properties in the model are valid
@@ -42,7 +75,7 @@ module Cryptopay
 
     # Builds the object from hash
     # @param [Hash] attributes Model attributes in the form of hash
-    # @return [Cryptopay::InvoiceRecalculationParams] Returns the model itself
+    # @return [Cryptopay::Coin] Returns the model itself
     def self.build_from_hash(data)
       attributes = ENCODER.build_from_hash(data)
       new(attributes)
