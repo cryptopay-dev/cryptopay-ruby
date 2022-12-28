@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
-require 'pry-byebug'
 require 'cryptopay'
-require 'faraday'
 require 'dotenv/load'
+require 'faraday'
+require 'pry-byebug'
 
 Dir['./spec/support/**/*.rb'].sort.each { |f| require f }
 

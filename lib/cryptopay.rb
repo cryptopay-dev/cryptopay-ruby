@@ -2,23 +2,22 @@
 
 require 'base64'
 require 'cgi'
+require 'date'
 require 'faraday'
 require 'json'
-require 'date'
 require 'time'
 
-# Common files
-require 'cryptopay/version'
-require 'cryptopay/encoder'
-require 'cryptopay/require'
-require 'cryptopay/config'
 require 'cryptopay/authentication'
-require 'cryptopay/connection'
-require 'cryptopay/types'
-require 'cryptopay/request'
 require 'cryptopay/callbacks'
 require 'cryptopay/client'
+require 'cryptopay/config'
+require 'cryptopay/connection'
+require 'cryptopay/encoder'
 require 'cryptopay/errors'
+require 'cryptopay/request'
+require 'cryptopay/require'
+require 'cryptopay/types'
+require 'cryptopay/version'
 
 module Cryptopay
   PRODUCTION = 'https://business.cryptopay.me'

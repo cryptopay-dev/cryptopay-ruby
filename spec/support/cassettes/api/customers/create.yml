@@ -5,18 +5,18 @@ http_interactions:
     uri: https://business-sandbox.cryptopay.me/api/customers
     body:
       encoding: UTF-8
-      string: '{"id":"e2abd0899bada2814e6f6aa08aae61f8","currency":"EUR"}'
+      string: '{"id":"500b71259c48d4e212693a21e0d10c60","currency":"EUR"}'
     headers:
       User-Agent:
-      - Cryptopay Ruby v0.1.0
+      - Cryptopay Ruby v1.0.0
       Accept:
       - application/json
       Date:
-      - Mon, 18 Oct 2021 10:56:41 GMT
+      - Wed, 28 Dec 2022 11:46:46 GMT
       Content-Type:
       - application/json
       Authorization:
-      - HMAC <API_KEY>:qeFGUyArCutojVbnO1sMEe1cjPI=
+      - HMAC <API_KEY>:ebwVNsyPeLRWlK3bOSjbbRqQQug=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -25,42 +25,35 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Mon, 18 Oct 2021 10:56:42 GMT
+      - Wed, 28 Dec 2022 11:46:47 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '89'
+      - '104'
       Connection:
       - keep-alive
       Cf-Ray:
-      - 6a013dd6b832012e-AMS
+      - 780a0eb3aa55b978-AMS
+      Cache-Control:
+      - no-store
       Strict-Transport-Security:
       - max-age=15552000; includeSubDomains
       Cf-Cache-Status:
       - DYNAMIC
       Content-Security-Policy:
-      - 'form-action ''self''; frame-ancestors ''self''; base-uri ''self''; default-src
-        ''none''; script-src ''self''; connect-src ''self''; img-src ''self'' https:
-        data:; style-src ''self'' ''unsafe-inline'' https:; font-src ''self''; object-src
-        ''none''; plugin-types application/pdf; child-src ''self''; frame-src ''self'';
-        media-src ''self'''
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      - frame-ancestors 'none'
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
-      X-Xss-Protection:
-      - 1; mode=block
       Vary:
       - Accept-Encoding
       Server:
       - cloudflare
       Alt-Svc:
-      - h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443";
-        ma=86400
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"e2abd0899bada2814e6f6aa08aae61f8","currency":"EUR","refund_addresses":{}}}'
-  recorded_at: Mon, 18 Oct 2021 10:56:42 GMT
+      string: '{"data":{"id":"500b71259c48d4e212693a21e0d10c60","currency":"EUR","refund_addresses":{},"addresses":[]}}'
+  recorded_at: Wed, 28 Dec 2022 11:46:46 GMT
 recorded_with: VCR 6.0.0
