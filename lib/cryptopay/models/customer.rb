@@ -10,12 +10,12 @@ module Cryptopay
       attribute_map: {
         'id': :id,
         'currency': :currency,
-        'refund_addresses': :refund_addresses
+        'addresses': :addresses
       },
       types: {
         'id': :String,
         'currency': :String,
-        'refund_addresses': :'Hash<String, String>'
+        'addresses': :'Array<CustomerAddress>'
       },
       nullables: []
     )
@@ -38,8 +38,8 @@ module Cryptopay
     end
 
     # The list of refund addresses where Cryptopay will refund High-Risk transactions to
-    def refund_addresses
-      @attributes[:refund_addresses]
+    def addresses
+      @attributes[:addresses]
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -51,7 +51,13 @@ module Cryptopay
 
       properties.push('invalid value for "currency", currency cannot be nil.') if currency.nil?
 
-      properties.push('invalid value for "refund_addresses", refund_addresses cannot be nil.') if refund_addresses.nil?
+      properties.push('invalid value for "addresses", addresses cannot be nil.') if addresses.nil?
+
+      addresses&.each_with_index do |item, index|
+        item.invalid_properties.each do |prop|
+          properties.push("invalid value for \"addresses.#{index}\": #{prop}")
+        end
+      end
 
       properties
     end

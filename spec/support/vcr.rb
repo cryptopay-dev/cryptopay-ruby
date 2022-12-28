@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'webmock'
 require 'vcr'
+require 'webmock'
 
 VCR.configure do |c|
   c.cassette_library_dir = './spec/support/cassettes'

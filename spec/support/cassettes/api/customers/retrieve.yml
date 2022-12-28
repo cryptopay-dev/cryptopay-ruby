@@ -8,15 +8,15 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Cryptopay Ruby v0.1.0
+      - Cryptopay Ruby v1.0.0
       Accept:
       - application/json
       Date:
-      - Mon, 18 Oct 2021 10:59:37 GMT
+      - Wed, 28 Dec 2022 11:46:47 GMT
       Content-Type:
       - application/json
       Authorization:
-      - HMAC <API_KEY>:rZCu4qF5plCyWfAUUhuElStSrRo=
+      - HMAC <API_KEY>:i41KAgbj2pBVFOx0nzt612TrZew=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 18 Oct 2021 10:59:37 GMT
+      - Wed, 28 Dec 2022 11:46:48 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -33,7 +33,9 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 6a01421f7da94178-AMS
+      - 780a0eb9afef1e99-AMS
+      Cache-Control:
+      - no-store
       Strict-Transport-Security:
       - max-age=15552000; includeSubDomains
       Vary:
@@ -41,26 +43,17 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Content-Security-Policy:
-      - 'form-action ''self''; frame-ancestors ''self''; base-uri ''self''; default-src
-        ''none''; script-src ''self''; connect-src ''self''; img-src ''self'' https:
-        data:; style-src ''self'' ''unsafe-inline'' https:; font-src ''self''; object-src
-        ''none''; plugin-types application/pdf; child-src ''self''; frame-src ''self'';
-        media-src ''self'''
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      - frame-ancestors 'none'
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
-      X-Xss-Protection:
-      - 1; mode=block
       Server:
       - cloudflare
       Alt-Svc:
-      - h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443";
-        ma=86400
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"id":"CUSTOMER-123","currency":"EUR","refund_addresses":{"BTC":"2N9wPGx67zdSeAbXi15qHgoZ9Hb9Uxhd2uQ"}}}'
-  recorded_at: Mon, 18 Oct 2021 10:59:37 GMT
+      string: '{"data":{"id":"CUSTOMER-123","currency":"EUR","refund_addresses":{"BTC":"2N9wPGx67zdSeAbXi15qHgoZ9Hb9Uxhd2uQ"},"addresses":[{"address":"2N9wPGx67zdSeAbXi15qHgoZ9Hb9Uxhd2uQ","currency":"BTC","network":"bitcoin"}]}}'
+  recorded_at: Wed, 28 Dec 2022 11:46:48 GMT
 recorded_with: VCR 6.0.0

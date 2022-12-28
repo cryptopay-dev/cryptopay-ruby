@@ -11,7 +11,7 @@ RSpec.describe Cryptopay::Customers do
   describe '#create' do
     it 'returns CustomerResult', :aggregate_failures, vcr: 'api/customers/create' do
       params = Cryptopay::CustomerParams.new(
-        id: 'e2abd0899bada2814e6f6aa08aae61f8',
+        id: '500b71259c48d4e212693a21e0d10c60',
         currency: 'EUR'
       )
 
@@ -52,9 +52,13 @@ RSpec.describe Cryptopay::Customers do
     it 'returns CustomerResult', :aggregate_failures, vcr: 'api/customers/update' do
       customer_id = 'CUSTOMER-123'
       params = Cryptopay::CustomerUpdateParams.new(
-        refund_addresses: {
-          'BTC' => '2N9wPGx67zdSeAbXi15qHgoZ9Hb9Uxhd2uQ'
-        }
+        addresses: [
+          Cryptopay::CustomerAddress.new(
+            address: '2N9wPGx67zdSeAbXi15qHgoZ9Hb9Uxhd2uQ',
+            currency: 'BTC',
+            network: 'bitcoin'
+          )
+        ]
       )
 
       result = client.customers.update(customer_id, params)
