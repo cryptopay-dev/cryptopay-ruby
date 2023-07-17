@@ -18,7 +18,8 @@ module Cryptopay
         'description': :description,
         'metadata': :metadata,
         'success_redirect_url': :success_redirect_url,
-        'unsuccess_redirect_url': :unsuccess_redirect_url
+        'unsuccess_redirect_url': :unsuccess_redirect_url,
+        'payer_email': :payer_email
       },
       types: {
         'price_amount': :Decimal,
@@ -31,7 +32,8 @@ module Cryptopay
         'description': :String,
         'metadata': :'Hash<String, String>',
         'success_redirect_url': :String,
-        'unsuccess_redirect_url': :String
+        'unsuccess_redirect_url': :String,
+        'payer_email': :String
       },
       nullables: []
     )
@@ -95,6 +97,11 @@ module Cryptopay
 
     def unsuccess_redirect_url
       @attributes[:unsuccess_redirect_url]
+    end
+
+    # Email of payer
+    def payer_email
+      @attributes[:payer_email]
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

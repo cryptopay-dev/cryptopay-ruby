@@ -11,6 +11,7 @@ module Cryptopay
         'id': :id,
         'custom_id': :custom_id,
         'customer_id': :customer_id,
+        'subscription_id': :subscription_id,
         'status': :status,
         'status_context': :status_context,
         'address': :address,
@@ -38,6 +39,7 @@ module Cryptopay
         'id': :String,
         'custom_id': :String,
         'customer_id': :String,
+        'subscription_id': :String,
         'status': :InvoiceStatus,
         'status_context': :InvoiceStatusContext,
         'address': :String,
@@ -64,6 +66,7 @@ module Cryptopay
       nullables: %i[
         custom_id
         customer_id
+        subscription_id
         status_context
         name
         description
@@ -93,6 +96,10 @@ module Cryptopay
     # The internal ID of your customer that the invoice relates to
     def customer_id
       @attributes[:customer_id]
+    end
+
+    def subscription_id
+      @attributes[:subscription_id]
     end
 
     def status

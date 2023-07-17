@@ -88,6 +88,7 @@ module Cryptopay
     # @param [Hash] opts the optional parameters
     # @option opts [String] :customer_id The internal ID of your customer that the transaction relates to
     # @option opts [String] :starting_after Pagination parameter. ID to start after
+    # @option opts [String] :subscription_id
     # @return [InvoiceListResult]
     def list(opts = {})
       path = '/api/invoices'
@@ -95,6 +96,7 @@ module Cryptopay
       query_params = {}
       query_params[:customer_id] = opts[:customer_id] unless opts[:customer_id].nil?
       query_params[:starting_after] = opts[:starting_after] unless opts[:starting_after].nil?
+      query_params[:subscription_id] = opts[:subscription_id] unless opts[:subscription_id].nil?
 
       req = Request.new(
         method: :get,
