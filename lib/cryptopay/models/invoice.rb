@@ -11,6 +11,7 @@ module Cryptopay
         'id': :id,
         'custom_id': :custom_id,
         'customer_id': :customer_id,
+        'subscription_id': :subscription_id,
         'status': :status,
         'status_context': :status_context,
         'address': :address,
@@ -38,6 +39,7 @@ module Cryptopay
         'id': :String,
         'custom_id': :String,
         'customer_id': :String,
+        'subscription_id': :String,
         'status': :InvoiceStatus,
         'status_context': :InvoiceStatusContext,
         'address': :String,
@@ -64,6 +66,7 @@ module Cryptopay
       nullables: %i[
         custom_id
         customer_id
+        subscription_id
         status_context
         name
         description
@@ -73,6 +76,14 @@ module Cryptopay
       ]
     )
     private_constant :ENCODER
+
+    # Builds the object from hash
+    # @param [Hash] attributes Model attributes in the form of hash
+    # @return [Cryptopay::Invoice] Returns the model itself
+    def self.build_from_hash(data)
+      attributes = ENCODER.build_from_hash(data)
+      new(attributes)
+    end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
@@ -93,6 +104,10 @@ module Cryptopay
     # The internal ID of your customer that the invoice relates to
     def customer_id
       @attributes[:customer_id]
+    end
+
+    def subscription_id
+      @attributes[:subscription_id]
     end
 
     def status
@@ -262,14 +277,6 @@ module Cryptopay
     # @return true if the model is valid
     def valid?
       invalid_properties.empty?
-    end
-
-    # Builds the object from hash
-    # @param [Hash] attributes Model attributes in the form of hash
-    # @return [Cryptopay::Invoice] Returns the model itself
-    def self.build_from_hash(data)
-      attributes = ENCODER.build_from_hash(data)
-      new(attributes)
     end
 
     # Returns the object in the form of hash

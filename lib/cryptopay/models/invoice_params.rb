@@ -18,7 +18,8 @@ module Cryptopay
         'description': :description,
         'metadata': :metadata,
         'success_redirect_url': :success_redirect_url,
-        'unsuccess_redirect_url': :unsuccess_redirect_url
+        'unsuccess_redirect_url': :unsuccess_redirect_url,
+        'payer_email': :payer_email
       },
       types: {
         'price_amount': :Decimal,
@@ -31,11 +32,20 @@ module Cryptopay
         'description': :String,
         'metadata': :'Hash<String, String>',
         'success_redirect_url': :String,
-        'unsuccess_redirect_url': :String
+        'unsuccess_redirect_url': :String,
+        'payer_email': :String
       },
       nullables: []
     )
     private_constant :ENCODER
+
+    # Builds the object from hash
+    # @param [Hash] attributes Model attributes in the form of hash
+    # @return [Cryptopay::InvoiceParams] Returns the model itself
+    def self.build_from_hash(data)
+      attributes = ENCODER.build_from_hash(data)
+      new(attributes)
+    end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
@@ -97,6 +107,11 @@ module Cryptopay
       @attributes[:unsuccess_redirect_url]
     end
 
+    # Email of payer
+    def payer_email
+      @attributes[:payer_email]
+    end
+
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def invalid_properties
@@ -115,14 +130,6 @@ module Cryptopay
     # @return true if the model is valid
     def valid?
       invalid_properties.empty?
-    end
-
-    # Builds the object from hash
-    # @param [Hash] attributes Model attributes in the form of hash
-    # @return [Cryptopay::InvoiceParams] Returns the model itself
-    def self.build_from_hash(data)
-      attributes = ENCODER.build_from_hash(data)
-      new(attributes)
     end
 
     # Returns the object in the form of hash

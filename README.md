@@ -20,6 +20,7 @@ For more information, please visit [Cryptopay API docs](https://developers.crypt
    * [Invoices](#invoices)
    * [Rates](#rates)
    * [Risks](#risks)
+   * [Subscriptions](#subscriptions)
    * [Transactions](#transactions)
 * [Callbacks](#callbacks)
 * [Development](#development)
@@ -484,6 +485,65 @@ params = Cryptopay::RiskParams.new(
 
 result = client.risks.score(params)
 p result # => <RiskResult data=...>
+```
+
+### Subscriptions
+
+
+#### Cancel a subscription
+
+
+```ruby
+subscription_id = 'de37fb63-986b-4f83-bf9f-612734316fdc'
+
+result = client.subscriptions.cancel(subscription_id)
+p result # => <SubscriptionResult data=...>
+```
+
+#### Create a subscription
+
+
+```ruby
+params = Cryptopay::SubscriptionParams.new(
+  name: 'Subscription name',
+  amount: '100.0',
+  currency: 'EUR',
+  period: 'month',
+  period_quantity: 3,
+  payer_email: 'user@example.com',
+  starts_at: Time.now.utc + 7 * 24 * 3600
+)
+
+result = client.subscriptions.create(params)
+p result # => <SubscriptionResult data=...>
+```
+
+#### List subscriptions
+
+
+```ruby
+result = client.subscriptions.list
+p result # => <SubscriptionListResult data=...>
+```
+
+#### Retrieve a subscription
+
+
+```ruby
+subscription_id = '64249ede-8969-4d5c-a042-806f9c3e7db3'
+
+result = client.subscriptions.retrieve(subscription_id)
+p result # => <SubscriptionResult data=...>
+```
+
+#### Retrieve a subscription by custom_id
+
+
+```ruby
+custom_id = 'PAYMENT-123'
+
+result = client.subscriptions.retrieve_by_custom_id(custom_id)
+p result # => <SubscriptionResult data=...>
 ```
 
 ### Transactions

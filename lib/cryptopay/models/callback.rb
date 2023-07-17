@@ -10,7 +10,7 @@ module Cryptopay
 
     # Builds the object
     # @param [Mixed] Data to be matched against the list of oneOf items
-    # @return [Cryptopay::ChannelPaymentCallback, Cryptopay::CoinWithdrawalCallback, Cryptopay::InvoiceCallback, nil] Returns the model or nil
+    # @return [Cryptopay::ChannelPaymentCallback, Cryptopay::CoinWithdrawalCallback, Cryptopay::InvoiceCallback, Cryptopay::SubscriptionCallback, nil] Returns the model or nil
     def self.build_from_hash(data)
       case data[DISCRIMINATOR_NAME]
       when 'ChannelPayment'
@@ -19,6 +19,8 @@ module Cryptopay
         CoinWithdrawalCallback.build_from_hash(data)
       when 'Invoice'
         InvoiceCallback.build_from_hash(data)
+      when 'Subscription'
+        SubscriptionCallback.build_from_hash(data)
       end
     end
   end
