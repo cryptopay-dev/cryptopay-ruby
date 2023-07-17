@@ -17,6 +17,14 @@ module Cryptopay
     )
     private_constant :ENCODER
 
+    # Builds the object from hash
+    # @param [Hash] attributes Model attributes in the form of hash
+    # @return [Cryptopay::NetworkFeeListResult] Returns the model itself
+    def self.build_from_hash(data)
+      attributes = ENCODER.build_from_hash(data)
+      new(attributes)
+    end
+
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
@@ -47,14 +55,6 @@ module Cryptopay
     # @return true if the model is valid
     def valid?
       invalid_properties.empty?
-    end
-
-    # Builds the object from hash
-    # @param [Hash] attributes Model attributes in the form of hash
-    # @return [Cryptopay::NetworkFeeListResult] Returns the model itself
-    def self.build_from_hash(data)
-      attributes = ENCODER.build_from_hash(data)
-      new(attributes)
     end
 
     # Returns the object in the form of hash
