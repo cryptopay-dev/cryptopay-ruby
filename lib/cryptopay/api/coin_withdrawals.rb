@@ -26,6 +26,7 @@ module Cryptopay
     end
 
     # Create a withdrawal
+    # To create a withdrawal you need to use either &#x60;charged_amount&#x60;, &#x60;charged_amount_to_send&#x60; or &#x60;received_amount&#x60; parameters in your request body.
     # @param coin_withdrawal_params [CoinWithdrawalParams]
     # @param [Hash] opts the optional parameters
     # @return [CoinWithdrawalResult]

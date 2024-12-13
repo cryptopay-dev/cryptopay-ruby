@@ -26,7 +26,7 @@ module Cryptopay
 
     private
 
-    def setup_apis(connection) # rubocop:disable Metrics/MethodLength
+    def setup_apis(connection)
       @invoices = Invoices.new(connection)
       @rates = Rates.new(connection)
       @coin_withdrawals = CoinWithdrawals.new(connection)
@@ -35,7 +35,6 @@ module Cryptopay
       @transactions = Transactions.new(connection)
       @exchange_transfers = ExchangeTransfers.new(connection)
       @customers = Customers.new(connection)
-      @risks = Risks.new(connection)
       @coins = Coins.new(connection)
       @subscriptions = Subscriptions.new(connection)
     end

@@ -18,7 +18,9 @@ module Cryptopay
         'custom_id': :custom_id,
         'customer_id': :customer_id,
         'network_fee_level': :network_fee_level,
-        'force_commit': :force_commit
+        'force_commit': :force_commit,
+        'travel_rule_compliant': :travel_rule_compliant,
+        'beneficiary': :beneficiary
       },
       types: {
         'address': :String,
@@ -31,7 +33,9 @@ module Cryptopay
         'custom_id': :String,
         'customer_id': :String,
         'network_fee_level': :NetworkFeeLevel,
-        'force_commit': :Boolean
+        'force_commit': :Boolean,
+        'travel_rule_compliant': :Boolean,
+        'beneficiary': :Beneficiary
       },
       nullables: %i[
         charged_amount
@@ -75,17 +79,17 @@ module Cryptopay
       @attributes[:network]
     end
 
-    # All applicable fees will be deducted from this amount before processing a transaction instead of adding them on top it
+    # The exact amount to debit from your account in `charged_currency`. All applicable fees will be deducted from this amount before processing a transaction instead of adding them on top it.
     def charged_amount
       @attributes[:charged_amount]
     end
 
-    # An exact transaction amount to send. All applicable fees will be added on top of this amount and debited from your account
+    # The exact transaction amount to send in `charged_currency`. All applicable fees will be added on top of this amount and debited from your account.
     def charged_amount_to_send
       @attributes[:charged_amount_to_send]
     end
 
-    # An exact transaction amount to send. All applicable fees will be added on top of this amount and debited from your account. Use this parameter if you want to send a transaction from cryptocurrency accounts only
+    # The exact transaction amount to send in `received_currency`. All applicable fees will be added on top of this amount and debited from your account.
     def received_amount
       @attributes[:received_amount]
     end
@@ -109,6 +113,15 @@ module Cryptopay
       @attributes[:force_commit]
     end
 
+    # Is `false` if omitted. Set `true` to turn on beneficiary data validations
+    def travel_rule_compliant
+      @attributes[:travel_rule_compliant]
+    end
+
+    def beneficiary
+      @attributes[:beneficiary]
+    end
+
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def invalid_properties
@@ -124,6 +137,10 @@ module Cryptopay
 
       if !network_fee_level.nil? && !%w[fast average slow].include?(network_fee_level)
         properties.push('invalid value for network_fee_level, must be one of "fast", "average", "slow"')
+      end
+
+      beneficiary&.invalid_properties&.each do |prop|
+        properties.push("invalid value for \"beneficiary\": #{prop}")
       end
 
       properties
