@@ -105,3 +105,6 @@ Metrics/MethodLength:
 Naming/PredicateName:
   Exclude:
     - lib/cryptopay/models/**/*
+
+Naming/VariableNumber:
+  AllowedIdentifiers: line_1, line_2
