@@ -19,7 +19,6 @@ For more information, please visit [Cryptopay API docs](https://developers.crypt
    * [ExchangeTransfers](#exchangetransfers)
    * [Invoices](#invoices)
    * [Rates](#rates)
-   * [Risks](#risks)
    * [Subscriptions](#subscriptions)
    * [Transactions](#transactions)
 * [Callbacks](#callbacks)
@@ -467,24 +466,6 @@ quote_currency = 'EUR'
 
 result = client.rates.retrieve(base_currency, quote_currency)
 p result # => <RateResult data=...>
-```
-
-### Risks
-
-[Risks API docs](https://developers.cryptopay.me/guides/risks)
-
-#### Score a coin address
-
-
-```ruby
-params = Cryptopay::RiskParams.new(
-  address: '2N9wPGx67zdSeAbXi15qHgoZ9Hb9Uxhd2uQ',
-  currency: 'BTC',
-  type: 'source_of_funds'
-)
-
-result = client.risks.score(params)
-p result # => <RiskResult data=...>
 ```
 
 ### Subscriptions
