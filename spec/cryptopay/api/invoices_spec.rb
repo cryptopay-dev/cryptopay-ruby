@@ -56,9 +56,8 @@ RSpec.describe Cryptopay::Invoices do
   describe '#create_refund' do
     it 'returns InvoiceRefundResult', :aggregate_failures, vcr: 'api/invoices/create_refund' do
       invoice_id = '7e274430-e20f-4321-8748-20824287ae44'
-      invoice_refund_params = Cryptopay::InvoiceRefundParams.new(address: '0xf3532c1fd002665ec54d46a50787e0c69c76cd44')
 
-      result = client.invoices.create_refund(invoice_id, invoice_refund_params)
+      result = client.invoices.create_refund(invoice_id)
       p result # => <InvoiceRefundResult data=...>
 
       expect(result).to be_a(Cryptopay::InvoiceRefundResult)

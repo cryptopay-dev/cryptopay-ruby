@@ -26,7 +26,7 @@ module Cryptopay
     end
 
     # Create a withdrawal
-    # To create a withdrawal you need to use either &#x60;charged_amount&#x60;, &#x60;charged_amount_to_send&#x60; or &#x60;received_amount&#x60; parameters in your request body.
+    # To create a withdrawal you must provide either the legacy amount fields (&#x60;charged_amount&#x60;, &#x60;charged_amount_to_send&#x60;, &#x60;received_amount&#x60;) or the new amount fields (&#x60;amount&#x60;, &#x60;amount_currency&#x60;, &#x60;amount_includes_processing_fee&#x60;, &#x60;amount_includes_network_fee&#x60;). Mixing legacy and new amount fields in one request is not allowed.
     # @param coin_withdrawal_params [CoinWithdrawalParams]
     # @param [Hash] opts the optional parameters
     # @return [CoinWithdrawalResult]

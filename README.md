@@ -206,6 +206,19 @@ params = Cryptopay::CoinWithdrawalParams.new(
 
 result = client.coin_withdrawals.create(params)
 p result # => <CoinWithdrawalResult data=...>
+# New amounts example
+params = Cryptopay::CoinWithdrawalParams.new(
+  address: '2Mz3bcjSVHG8uQJpNjmCxp24VdTjwaqmFcJ',
+  amount: '100.0',
+  amount_currency: 'EUR',
+  received_currency: 'BTC',
+  amount_includes_processing_fee: true,
+  amount_includes_network_fee: true,
+  force_commit: true
+)
+
+result = client.coin_withdrawals.create(params)
+p result # => <CoinWithdrawalResult data=...>
 ```
 
 #### List withdrawals
@@ -402,9 +415,8 @@ p result # => <InvoiceRecalculationResult data=...>
 
 ```ruby
 invoice_id = '7e274430-e20f-4321-8748-20824287ae44'
-invoice_refund_params = Cryptopay::InvoiceRefundParams.new(address: '0xf3532c1fd002665ec54d46a50787e0c69c76cd44')
 
-result = client.invoices.create_refund(invoice_id, invoice_refund_params)
+result = client.invoices.create_refund(invoice_id)
 p result # => <InvoiceRefundResult data=...>
 ```
 

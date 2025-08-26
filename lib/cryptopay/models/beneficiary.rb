@@ -69,8 +69,6 @@ module Cryptopay
       pattern = Regexp.new(/^[a-zA-Z0-9\s-]+$/)
       properties.push("invalid value for \"name\", must conform to the pattern #{pattern}.") if name !~ pattern
 
-      properties.push('invalid value for "address", address cannot be nil.') if address.nil?
-
       address&.invalid_properties&.each do |prop|
         properties.push("invalid value for \"address\": #{prop}")
       end

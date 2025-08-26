@@ -41,6 +41,19 @@ RSpec.describe Cryptopay::CoinWithdrawals do
 
       result = client.coin_withdrawals.create(params)
       p result # => <CoinWithdrawalResult data=...>
+      # New amounts example
+      params = Cryptopay::CoinWithdrawalParams.new(
+        address: '2Mz3bcjSVHG8uQJpNjmCxp24VdTjwaqmFcJ',
+        amount: '100.0',
+        amount_currency: 'EUR',
+        received_currency: 'BTC',
+        amount_includes_processing_fee: true,
+        amount_includes_network_fee: true,
+        force_commit: true
+      )
+
+      result = client.coin_withdrawals.create(params)
+      p result # => <CoinWithdrawalResult data=...>
 
       expect(result).to be_a(Cryptopay::CoinWithdrawalResult)
       expect(result).to be_valid
