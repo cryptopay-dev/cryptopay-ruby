@@ -40,7 +40,7 @@ module Cryptopay
       @attributes[:type]
     end
 
-    # The registered name of the company for a `legal_person` or the full name for a `natural_person`.
+    # The registered name of the company for a `legal_person` or the full name for a `natural_person`. Note that only following symbols will be stored, regardless of the input value: letters of any language, digits `0-9`, symbols `&` `!` `,` `.` `-` and single spaces. Symbols `\\`, `/`, newlines and tabs will be replaced with spaces. Everything else will be removed, including double spaces and spaces in the end.
     def name
       @attributes[:name]
     end
@@ -65,9 +65,6 @@ module Cryptopay
       if name.to_s.length > 100
         properties.push('invalid value for "name", the character length must be smaller than or equal to 100.')
       end
-
-      pattern = Regexp.new(/^[a-zA-Z0-9\s-]+$/)
-      properties.push("invalid value for \"name\", must conform to the pattern #{pattern}.") if name !~ pattern
 
       address&.invalid_properties&.each do |prop|
         properties.push("invalid value for \"address\": #{prop}")
