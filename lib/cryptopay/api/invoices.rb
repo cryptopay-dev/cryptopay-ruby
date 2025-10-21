@@ -65,19 +65,19 @@ module Cryptopay
     end
 
     # Create invoice refund
-    # This endpoint allows you to create invoice refunds.
+    # This endpoint allows you to create invoice refunds to your cryptocurrency account.
     # @param invoice_id [String] Invoice ID
-    # @param invoice_refund_params [InvoiceRefundParams]
     # @param [Hash] opts the optional parameters
+    # @option opts [Object] :body
     # @return [InvoiceRefundResult]
-    def create_refund(invoice_id, invoice_refund_params, _opts = {})
+    def create_refund(invoice_id, opts = {})
       path = '/api/invoices/{invoice_id}/refunds'
       path = path.sub('{invoice_id}', CGI.escape(invoice_id.to_s))
 
       req = Request.new(
         method: :post,
         path: path,
-        body_params: invoice_refund_params
+        body_params: opts[:body] || {}
       )
 
       connection.call(req, return_type: InvoiceRefundResult)

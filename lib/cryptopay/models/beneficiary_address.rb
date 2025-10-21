@@ -69,9 +69,7 @@ module Cryptopay
     def invalid_properties
       properties = []
 
-      properties.push('invalid value for "country", country cannot be nil.') if country.nil?
-
-      if country.to_s.length > 2
+      if !country.nil? && country.to_s.length > 2
         properties.push('invalid value for "country", the character length must be smaller than or equal to 2.')
       end
 

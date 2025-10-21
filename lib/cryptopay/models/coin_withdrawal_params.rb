@@ -20,7 +20,11 @@ module Cryptopay
         'network_fee_level': :network_fee_level,
         'force_commit': :force_commit,
         'travel_rule_compliant': :travel_rule_compliant,
-        'beneficiary': :beneficiary
+        'beneficiary': :beneficiary,
+        'amount': :amount,
+        'amount_currency': :amount_currency,
+        'amount_includes_processing_fee': :amount_includes_processing_fee,
+        'amount_includes_network_fee': :amount_includes_network_fee
       },
       types: {
         'address': :String,
@@ -35,7 +39,11 @@ module Cryptopay
         'network_fee_level': :NetworkFeeLevel,
         'force_commit': :Boolean,
         'travel_rule_compliant': :Boolean,
-        'beneficiary': :Beneficiary
+        'beneficiary': :Beneficiary,
+        'amount': :Decimal,
+        'amount_currency': :String,
+        'amount_includes_processing_fee': :Boolean,
+        'amount_includes_network_fee': :Boolean
       },
       nullables: %i[
         charged_amount
@@ -120,6 +128,26 @@ module Cryptopay
 
     def beneficiary
       @attributes[:beneficiary]
+    end
+
+    # Transaction amount for new calculation
+    def amount
+      @attributes[:amount]
+    end
+
+    # An currency of the transaction amount
+    def amount_currency
+      @attributes[:amount_currency]
+    end
+
+    # Whether the amount includes processing fee
+    def amount_includes_processing_fee
+      @attributes[:amount_includes_processing_fee]
+    end
+
+    # Whether the amount includes network fee
+    def amount_includes_network_fee
+      @attributes[:amount_includes_network_fee]
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
